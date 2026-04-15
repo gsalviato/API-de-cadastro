@@ -1,34 +1,30 @@
-import os
+# Native Node.js Customer Management API
 
-# Define the content of the README.md file
-readme_content = """# Customer Management API (Native Node.js)
+A robust, framework-less RESTful API for customer management built as a high-level software engineering exercise. The primary challenge was to architect a maintainable and scalable application using **only Node.js native modules** (like `http`), avoiding common frameworks like Express or Fastify.
 
-Esta é uma API RESTful para cadastro de clientes desenvolvida como um exercício de engenharia de software de alto nível. O desafio principal foi construir uma aplicação robusta e escalável **sem o uso de frameworks web** (como Express, Fastify ou NestJS), utilizando apenas os módulos nativos do Node.js.
+## 🎯 Project Goals & Constraints
 
-## 🛠 Tecnologias e Ferramentas
+- **Zero Frameworks:** Built using vanilla Node.js.
+- **Strict TypeScript:** High type safety and interface-driven design.
+- **Architectural Excellence:** Following SOLID principles and Clean Code.
+- **Object Calisthenics Compliance:**
+    - Only one level of indentation per method.
+    - No `else` keyword (Early Return pattern).
+    - Wrapped primitives (Value Objects).
+- **Relational Integrity:** SQLite implementation respecting the 3rd Normal Form (3NF).
 
-- **Linguagem:** TypeScript
-- **Runtime:** Node.js (Módulo `http` nativo)
-- **Banco de Dados:** SQLite (3ª Forma Normal - 3NF)
-- **Execução:** ts-node
+## 🛠 Tech Stack
 
-## 🏗 Arquitetura e Padrões (Engineering Specs)
+- **Runtime:** Node.js (Native `http` module)
+- **Language:** TypeScript
+- **Database:** SQLite (via `sqlite3` and `sqlite` wrapper)
+- **Development Tooling:** `ts-node` for execution, `tsc` for compilation.
 
-O projeto foi construído seguindo princípios rigorosos de design de software para garantir manutenibilidade e testabilidade:
-
-- **SOLID & Clean Code:** Separação clara de responsabilidades.
-- **Object Calisthenics:** - Apenas um nível de indentação por método.
-    - Uso zero da palavra reservada `else` (Early Return pattern).
-    - Encapsulamento de tipos primitivos (Value Objects).
-- **Lei de Demeter:** As entidades possuem comportamento e protegem seu estado interno.
-- **Value Objects:** Validação rigorosa de Nome, E-mail e Telefone em objetos especializados, impedindo que a aplicação entre em estado inválido.
-- **3rd Normal Form (3NF):** Separação física entre as tabelas de `customers` e `phones` para eliminar redundâncias.
-
-## 📂 Estrutura de Pastas
+## 📂 Project Structure
 
 ```text
 src/
-├── domain/            # Regras de negócio, Entidades e Value Objects
-├── infrastructure/    # Conexão com banco de dados, Repositórios e Helpers
-├── controllers/       # Orquestração da lógica de entrada/saída
-└── server.ts          # Entry point e roteamento nativo
+├── domain/            # Business logic, Entities, and Value Objects
+├── infrastructure/    # Database connection, Repositories, and HTTP Helpers
+├── controllers/       # Orchestration and request handling
+└── server.ts          # Entry point and native routing logic
